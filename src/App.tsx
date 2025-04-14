@@ -1,8 +1,9 @@
+import Login from './features/login/Login';
+
 function App() {
   return (
     <div>
-      <h1>Home</h1>
-      <h2>로그인</h2>
+      <Login />
     </div>
   );
 }

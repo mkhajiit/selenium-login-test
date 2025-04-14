@@ -1,35 +1,35 @@
-name: Run Selenium Tests
+name: Run Tests
 
 on:
   push:
     branches:
-      - main # main 브랜치로 푸시될 때 실행
+      - main # main 브랜치에 푸시될 때마다 실행
   pull_request:
     branches:
-      - main # PR이 main 브랜치로 열릴 때 실행
+      - main # main 브랜치로 PR을 보낼 때마다 실행
 
 jobs:
-  selenium-test:
-    runs-on: ubuntu-latest # GitHub Actions에서 사용할 운영체제 (여기서는 최신 Ubuntu)
+  test:
+    runs-on: ubuntu-latest # GitHub Actions에서 사용할 운영체제 (여기선 Ubuntu)
 
     steps:
-      # 1. Checkout the code
-      - name: Checkout code
+      # 1단계: 레포지토리 코드 체크아웃
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      # 2. Set up Python environment
+      # 2단계: Python 설정
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.8' # 사용하려는 Python 버전 (예: 3.8)
+          python-version: '3.x' # Python 3 버전 설정
 
-      # 3. Install dependencies (예: Selenium, WebDriver Manager 등)
+      # 3단계: 필요한 패키지 설치
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install selenium webdriver-manager  # selenium, webdriver-manager 설치
+          pip install -r requirements.txt   # requirements.txt에서 의존성 설치
 
-      # 4. Run your test file (여기서 test.py는 테스트 스크립트 파일입니다)
-      - name: Run tests
+      # 4단계: 테스트 실행
+      - name: Run Tests
         run: |
-          python test.py  # 실제 테스트를 실행
+          python -m unittest discover -s src/features  # `src/features` 아래 모든 테스트 파일 실행

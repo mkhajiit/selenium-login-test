@@ -38,4 +38,7 @@
 
 ### 가상환경 비활성화
 
-- deactivate
+- **Windows**:
+  ```bash
+  deactivate
+  ```

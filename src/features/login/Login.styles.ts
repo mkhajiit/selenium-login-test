@@ -9,6 +9,14 @@ export const LoginContainer = styled.div`
   height: 100vh; // 전체 높이 기준
 `;
 
+export const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+`;
+
 export const InputGroup = styled.div`
   width: 50%;
   height: 70%;
@@ -21,7 +29,7 @@ export const StyledInput = styled.input`
   width: 100%;
   height: 20%;
   margin: 1rem;
-  font-size: 1rem;
+  font-size: 2rem;
 `;
 
 export const StyledButton = styled.button`

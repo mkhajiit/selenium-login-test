@@ -1,3 +1,4 @@
+// 로그인 컴포넌트
 import { useState } from 'react';
 import { InputGroup, LoginContainer, StyledButton, StyledForm, StyledInput } from './Login.styles';
 
@@ -5,6 +6,7 @@ function Login() {
   const [idInput, setIdInput] = useState('');
   const [pwdInput, setPwdInput] = useState('');
 
+  // 버튼 클릭 이벤트 리스너
   const onClick = () => {
     console.log('아이디:', idInput, '비밀번호:', pwdInput);
     if (idInput === '테스터') {

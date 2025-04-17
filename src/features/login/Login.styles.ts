@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// 로그인 컴포넌트 콘테이너
 export const LoginContainer = styled.div`
   font-size: 3rem;
   display: flex;
@@ -9,6 +10,7 @@ export const LoginContainer = styled.div`
   height: 100vh; // 전체 높이 기준
 `;
 
+// 로그인 폼
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -17,6 +19,7 @@ export const StyledForm = styled.form`
   height: 100%;
 `;
 
+// input 콘테이너
 export const InputGroup = styled.div`
   width: 50%;
   height: 70%;
@@ -25,6 +28,7 @@ export const InputGroup = styled.div`
   align-items: center;
 `;
 
+// input 스타일
 export const StyledInput = styled.input`
   width: 100%;
   height: 20%;
@@ -32,6 +36,7 @@ export const StyledInput = styled.input`
   font-size: 2rem;
 `;
 
+// button 스타일
 export const StyledButton = styled.button`
   width: 50%;
   height: 15%;

@@ -13,6 +13,7 @@ class TestLogin(unittest.TestCase):
     def setUp(self):
         options = webdriver.ChromeOptions()  # 설정객체
         options.add_argument("--start-maximized")  # 브라우저 창을 최대화로 열도록 설정
+        options.add_argument("--headless")  # headless 모드로 실행
 
         # 드라이버 설정
         self.driver = webdriver.Chrome(

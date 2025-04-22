@@ -32,4 +32,4 @@ jobs:
       # 4단계: 테스트 실행
       - name: Run Tests
         run: |
-          python -m unittest discover -s src/features
+          python -m unittest discover -s src/features -p "test_*.py"

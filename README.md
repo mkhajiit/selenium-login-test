@@ -50,4 +50,8 @@
 3. Github Action 이 작동하지 않음
    원인: 1. GitHub Actions와 같은 CI/CD 환경에서는 headless 모드(즉, 화면을 띄우지 않고 브라우저가 백그라운드에서 실행되는 모드)가 필요 2. 배포하지 않은 환경에 GitHub가 접근 하지 못해서 배포된 도메인이 필요함 3. test.yml에 테스트 파일 실행할 경로를 python -m unittest discover -s src/features/login/tests -p "test\_\*.py" 이렇게 맞추니 실행 됨
 
-   해결: options.add_argument("--headless") 코드 추가, vercel에 배포, test.yml 4단계 경로 수정
+   해결: options.add_argument("--headless") 코드 추가, vercel에 배포, test.yml 4단계 부분 경로 수정
+
+## 완료
+
+vercel로 배포된 테스트 페이지를 GitHub Action을 이용해 selenium으로 작성된 테스트를 push할때마다 자동으로 실행하도록 구현 완료

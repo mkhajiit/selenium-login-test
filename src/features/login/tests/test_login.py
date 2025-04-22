@@ -21,8 +21,8 @@ class TestLogin(unittest.TestCase):
             options=options
         )
 
-        self.driver.get("https://selenium-login-test.vercel.app/")  # 테스트할 사이트로 이동
-
+        self.driver.get("http://localhost:5173/")  # 테스트할 사이트로 이동
+# https://selenium-login-test.vercel.app/
     # 테스트 실행 후 무조건 실행되는 코드
     def tearDown(self):
         time.sleep(2)  # 프로그램을 2초 동안 멈추는 코드

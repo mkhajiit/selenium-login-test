@@ -16,14 +16,17 @@ driver = webdriver.Chrome(
     options=options
 )
 
+id = "테스터"
+pwd = "123456"
+
 try:
   driver.get("http://localhost:5173/")
 
   id_input = driver.find_element(By.CLASS_NAME, "id-input")
   pwd_input = driver.find_element(By.CLASS_NAME, "pwd-input")
 
-  id_input.send_keys("테스터2")
-  pwd_input.send_keys("1234")
+  id_input.send_keys(id)
+  pwd_input.send_keys(pwd)
 
   login_button = driver.find_element(By.TAG_NAME, "button")
   login_button.click()
@@ -32,7 +35,8 @@ try:
   # alert 객체 가져오기
   alert  = Alert(driver)
   
-  assert alert.text == '로그인이 성공했습니다.'
+  # 조건이 False이면 AssertionError를 발생시키고, 뒤에 있는 메시지를 같이 출력
+  assert alert.text == '로그인이 성공했습니다.', f"로그인 실패! 실제 메시지: {alert.text}, 입력된 아이디: {id}, 입력된 비밀번호: {pwd}"
 
   print("검증이 성공했습니다.")
 
